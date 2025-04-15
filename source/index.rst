@@ -7,12 +7,16 @@ stemCNV-check documentation
 ===========================
 
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+Table of Contents
+^^^^^^^^^^^^^^^^^
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Introduction
+    :name: stemcnv_intro
+
+    introduction
