@@ -10,8 +10,7 @@ Installation of WSL (Windows Subsystem for Linux)
 
 Installation of Conda
 
-``wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"``   
-
+``wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"``   \\
 ``bash Miniforge3-$(uname)-$(uname -m).sh``
 
 
