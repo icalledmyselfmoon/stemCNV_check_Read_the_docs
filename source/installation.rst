@@ -3,10 +3,10 @@ Installation
 
 Step-by-step instructions for setting up and running StemCNV-check on Windows.
 
-Prerequisite: installation of WSL (Windows Subsystem for Linux) and Conda.
+Installation of WSL (Windows Subsystem for Linux)  
 
 ``wsl --install``
-
+Installation of Conda.
 ``wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"``
 ``bash Miniforge3-$(uname)-$(uname -m).sh``
 
@@ -14,7 +14,6 @@ Prerequisite: installation of WSL (Windows Subsystem for Linux) and Conda.
 Install StemCNV-check
 
 • Clone the StemCNV-check git repository:
-
 ``git clone https://github.com/bihealth/StemCNV-check.git``
 
 • Prepare the conda environment: ``conda install python=3.12``
