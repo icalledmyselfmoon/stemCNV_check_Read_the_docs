@@ -14,6 +14,11 @@ Table of Contents
     :maxdepth: 2
     :caption: Contents:
 
-    introduction
+.. toctree::
+    :maxdepth: 2
+    :caption: Installation
+    :name: intro
+    :hidden:
+
     installation
-    usage
+    
