@@ -14,9 +14,6 @@ Table of Contents
     :maxdepth: 2
     :caption: Contents:
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Introduction
-    :name: stemcnv_intro
-
     introduction
+    installation
+    usage
