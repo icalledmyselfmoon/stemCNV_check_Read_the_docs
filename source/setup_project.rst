@@ -28,7 +28,7 @@ You will need to fill in the sample table with your own data.
 Sample table lists the samples to be analyzed and their properties. It is recommended to keep all samples of one project in a single table.
 
  .. csv-table:: Example Sample table
-   :file: sample_table.csv
+   :file: source/sample_table.csv
    :widths: 15 15 10 10 10 10 10 10 10 
    :header-rows: 1
 
