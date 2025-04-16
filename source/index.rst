@@ -18,7 +18,7 @@ StemCNV-check is a tool written to simplify copy number variation (CNV) analysis
 - quality control of hPSC genetic integrity based on CNV detection in SNP-array data 
 - detection of loss of heterozygosity
 - detection of CNVs/SNPsresponsible for changes in amino acid sequence
-- identification of hPSC line and detection of swaps or cross-contamination based on comparison to reference samples,  analysis based on samples SNP distance which indicates hPSC line identity. This allows, sample identification and detection of swaps  or cross-contamination 
+- identification of hPSC line and detection of swaps or cross-contamination based on comparison to reference samples,  analysis based on samples SNP distance which indicates hPSC line identity. This allows sample identification and detection of swaps  or cross-contamination 
 
 - evaluation of SNPs in coding regions of interest, detect  on/off target genomic changes generated after genetic engineering procedures.
 
