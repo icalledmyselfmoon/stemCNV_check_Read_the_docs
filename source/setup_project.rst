@@ -3,7 +3,11 @@ Project setup
 
 
 **Setting up our own data for analysis with StemCNV-check requires:**
+
 - manifest and static files
+- sample table
+
+- config file
 
 Array specific files sets matching your specific array platform and version: at least one, but
 better both manifest files (‘.bpm’ and ‘.csv’, the latter can be omitted), matching your desired Genome assembly
@@ -14,12 +18,8 @@ content you may need to contact the facility running your arrays to obtain manif
 probes. Files for the popular Infinium Global Screening Array can for example be obtained from this Illumina website.
 
 
-- sample table
-
-- config file
-
 Empty example files for the sample table and config can be created with this command:
-stemcnv-check setup-files
+``stemcnv-check setup-files``
 
 You will need to fill in the sample table with your own data and adjust the config file so that all entries marked as
 “#REQUIRED” are filled in.
