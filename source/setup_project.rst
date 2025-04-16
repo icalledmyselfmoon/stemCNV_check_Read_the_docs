@@ -1,17 +1,6 @@
 Project setup
 ============
 
-The config file (default: config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
-Required settings that are not defined by default include array definition files specific to the used array platform and genome build:
-
-egt_cluster_file: the illumina cluster file (.egt) for the array platform, available from Illumina or the provider running the array
-bpm_manifest_file: the beadpool manifest file (.bpm) for the array platform, available from Illumina or the provider running the array
-csv_manifest_file (optional): the manifest file in csv format, available from Illumina or the provider running the array
-Additionally, the config file needs to define the following paths:
-
-raw_data_folder: path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs)
-data_path: the output of StemCNV-check will be written to this path
-log_path: the log files of StemCNV-check will be written to this path
 
 **Setting up our own data for analysis with StemCNV-check requires:**
 
