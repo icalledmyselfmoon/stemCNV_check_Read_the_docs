@@ -29,7 +29,7 @@ Sample table lists the samples to be analyzed and their properties. It is recomm
 
  .. csv-table:: Example Sample table
    :file: sample_table.csv
-   :widths: 30 40 40 40 40 40 40 40 40
+   :widths: 15 15 10 10 10 10 10 10 10 
    :header-rows: 1
 
 
