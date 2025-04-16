@@ -31,6 +31,10 @@ StemCNV-check is a tool written to simplify copy number variation (CNV) analysis
 - linux environment (or WSL on windows) 
 - working conda (or mamba) 
 
+
+.. image:: source/workflow.png
+   :width: 600
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
