@@ -27,18 +27,18 @@ Empty example files for the sample table and config can be created with this com
 You will need to fill in the sample table with your own data.
 Sample table lists the samples to be analyzed and their properties. It is recommended to keep all samples of one project in a single table.
 
-======   ======   ======   ======   ======  ======  ======   ======  ======   
+  ======    ======   ======     ======     ======    ======           ======          ======     ======   
 
- Sample_ID	Chip_Name	Chip_Pos	Array_Name	Sex	Reference_Sample	Regions_of_Interest	Sample_Group	Coriell_ID
+ Sample_ID	Chip_Name	Chip_Pos	Array_Name	  Sex	  Reference_Sample	Regions_of_Interest	Sample_Group	Coriell_ID
 
-======   ======   ======   ======   ======   ======  ======   ======   ======
+  ======    ======   ======    ======     ======     ======           ======         ======       ======
 
-HG001	  207521920117	R09C02	ExampleArray	female				NA12878
-HG002	  207521920117	R05C02	ExampleArray	male				NA24385
-HG004	  207521920117	R07C02	ExampleArray	female				NA24143
-HG005	  207521920117	R01C02	ExampleArray	male	  HG006			NA24631
-HG006	  207521920117	R03C02	ExampleArray	male				NA24694
-HG007	  207521920117	R11C02	ExampleArray	female				NA24695
+HG001	  207521920117	R09C02 ExampleArray female                                                   NA12878
+HG002	  207521920117	R05C02	ExampleArray	male				                                                 NA24385
+HG004	  207521920117	R07C02	ExampleArray	female				                                               NA24143
+HG005	  207521920117	R01C02	ExampleArray	male	                                            HG006			NA24631
+HG006	  207521920117	R03C02	ExampleArray	male				                                                 NA24694
+HG007	  207521920117	R11C02	ExampleArray	female				                                               NA24695
 
 ======  ======  ======   ======   ======   ======   ======   ======  ======   
 
