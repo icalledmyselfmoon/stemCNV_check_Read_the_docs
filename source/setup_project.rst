@@ -50,7 +50,7 @@ Empty example files for the sample table and config can be created with this com
 
 **Fill in the sample table with your data**
 
-and their properties. It is recommended to keep all samples of one project in a single table.
+Sample table lists the samples to be analyzed and their properties.and their properties. It is recommended to keep all samples of one project in a single table.
 The sample table (default: sample_table.tsv) is a tab-separated file describing all samples to be analyzed:
 
 - Required columns: Sample_ID, Chip_Name, Chip_Pos, Array_Name, Sex, Reference_Sample
