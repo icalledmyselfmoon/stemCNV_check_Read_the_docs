@@ -5,7 +5,7 @@ Project setup
 **Setting up your own data for analysis with StemCNV-check requires:**
 
 - config file
-- manifest and static files (defined by the user in the config)
+- manifest and static files: egt_cluster_file, bpm_manifest_file, csv_manifest_file (optional)
 - sample table
 
 
@@ -15,9 +15,7 @@ Config file
 
 The default config file (config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
 
-*Adjust the config file*
-
-adjust the config file so that all entries marked as
+*Adjust the config file* so that all entries marked as
 ``“#REQUIRED”`` are filled in.
 
 **Define  files specific to the used array platform and genome build:**
