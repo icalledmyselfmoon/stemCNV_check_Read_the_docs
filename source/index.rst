@@ -37,5 +37,6 @@ StemCNV-check is a tool written to simplify copy number variation (CNV) analysis
 
 
     installation
+    setup_project
     
 
