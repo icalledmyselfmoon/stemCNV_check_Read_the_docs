@@ -1,31 +1,74 @@
 Project setup
 ============
 
+The config file (default: config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
+Required settings that are not defined by default include array definition files specific to the used array platform and genome build:
+
+egt_cluster_file: the illumina cluster file (.egt) for the array platform, available from Illumina or the provider running the array
+bpm_manifest_file: the beadpool manifest file (.bpm) for the array platform, available from Illumina or the provider running the array
+csv_manifest_file (optional): the manifest file in csv format, available from Illumina or the provider running the array
+Additionally, the config file needs to define the following paths:
+
+raw_data_folder: path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs)
+data_path: the output of StemCNV-check will be written to this path
+log_path: the log files of StemCNV-check will be written to this path
 
 **Setting up our own data for analysis with StemCNV-check requires:**
 
-- manifest and static files 
+- config file
+- manifest and static files (defined by the user in the config)
 - sample table
 
-- config file
 
-**Manifest and static files**
 
-These are array specific files sets matching your specific array platform and version.
-At least one, but better both manifest files (‘.bpm’ and ‘.csv’, the latter can be omitted), matching your desired Genome assembly
-(hg19/GRCh37 or hg38/GRCh38), and the clusterfiler (‘.egt). Illumina manifest files for hg19 usually end with ’A1’,
-while those for hg38 end with ‘A2’. The cluster file is not specific to a genome build.
-These files are generally provided as downloads by Illumina. However, for certain arrays with customisable probe
-content you may need to contact the facility running your arrays to obtain manifest files, that allow utilisation of all
-probes. Files for the popular Infinium Global Screening Array can for example be obtained from this Illumina website.
+Config file
+-----------
 
-**Fill in the sample table with your data**
+The default config file (config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
+
+*Adjust the config file*
+
+adjust the config file so that all entries marked as
+``“#REQUIRED”`` are filled in.
+
+**Define  files specific to the used array platform and genome build:**
+
+- egt_cluster_file: the illumina cluster file (.egt) for the array platform, available from Illumina or the provider running the array
+
+- bpm_manifest_file: the beadpool manifest file (.bpm) for the array platform, available from Illumina or the provider running the array
+- csv_manifest_file (optional): the manifest file in csv format, available from Illumina or the provider running the array
+
+**The config file needs to define the following paths:**
+
+- raw_data_folder: path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs)
+
+- data_path: the output of StemCNV-check will be written to this path
+- log_path: the log files of StemCNV-check will be written to this path
+
+**Advanced options**
+
+The config file created by this command will only include the absolute necessary settings to run the workflow. If
+you are interested in setting additional parameters or changing the content of the report, you can add this flag
+--config-details medium to the command (also available with ‘advanced’ or ‘complete’ instead of ‘medium’).
+
+
+
+
+
+Sample table
+-----------
 
 Empty example files for the sample table and config can be created with this command:
 ``stemcnv-check setup-files``
 
-You will need to fill in the sample table with your own data.
-Sample table lists the samples to be analyzed and their properties. It is recommended to keep all samples of one project in a single table.
+**Fill in the sample table with your data**
+
+and their properties. It is recommended to keep all samples of one project in a single table.
+The sample table (default: sample_table.tsv) is a tab-separated file describing all samples to be analyzed:
+
+- Required columns: Sample_ID, Chip_Name, Chip_Pos, Array_Name, Sex, Reference_Sample
+- Optional (reserved) columns: Regions_of_Interest
+
 								
 .. list-table::  Example Sample table
    :widths: 15 15 10 10 10 10 10 10 10 
@@ -94,12 +137,4 @@ Sample table lists the samples to be analyzed and their properties. It is recomm
      -
      - 
      - NA24695
-															
-**Adjust the config file**
 
-adjust the config file so that all entries marked as
-``“#REQUIRED”`` are filled in.
-
-The config file created by this command will only include the absolute necessary settings to run the workflow. If
-you are interested in setting additional parameters or changing the content of the report, you can add this flag
---config-details medium to the command (also available with ‘advanced’ or ‘complete’ instead of ‘medium’).
