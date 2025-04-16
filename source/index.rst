@@ -22,15 +22,14 @@ StemCNV-check is a tool written to simplify copy number variation (CNV) analysis
 
 - evaluation of SNPs in coding regions of interest, detect  on/off target genomic changes generated after genetic engineering procedures.
 
+Contents
+--------
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Installation
-    :name: intro
-    :hidden:
 
     installation
     
+
