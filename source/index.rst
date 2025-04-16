@@ -32,7 +32,7 @@ StemCNV-check is a tool written to simplify copy number variation (CNV) analysis
 - working conda (or mamba) 
 
 
-.. image:: source/workflow.png
+.. image:: workflow.png
    :width: 600
 
 .. toctree::
