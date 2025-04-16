@@ -18,10 +18,11 @@ Step-by-step instructions for setting up and running StemCNV-check on Windows.
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
     bash Miniforge3-$(uname)-$(uname -m).sh
 
-**Install StemCNV-check and prepare the conda environment**
+**Install StemCNV-check**
+**Clone the StemCNV-check git repository:**
 
 .. code:: bash
-   #Clone the StemCNV-check git repository:
+
    git clone https://github.com/bihealth/StemCNV-check.git
 
 
