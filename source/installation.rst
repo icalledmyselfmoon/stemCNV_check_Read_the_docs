@@ -30,21 +30,20 @@ Step-by-step instructions for setting up and running StemCNV-check on Windows.
 
    - for Linux
 
-   ``conda install python=3.12``
+    ``conda install python=3.12``
    
    - for WSL
 
-  ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
+    ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
+
 
 **Set up conda environment only for StemCNV-check**
 
 .. code:: bash
 
    conda create -n stemcnv-check python=3.12; conda activate stemcnv-check
-   #Change into the StemCNV-check directory:
-   cd StemCNV-check
-   #Install StemCNV-check and its dependencies with pip: 
-   pip install -e .
+   cd StemCNV-check   #change into the StemCNV-check directory
+   pip install -e .   #install StemCNV-check and its dependencies with pip
 
  
 
