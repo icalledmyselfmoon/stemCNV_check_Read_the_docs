@@ -6,15 +6,17 @@ Step-by-step instructions for setting up and running StemCNV-check on Windows.
 **WSL and Conda**
 
 **Installation of WSL (Windows Subsystem for Linux)**
-``wsl --install``
+
+.. code:: bash
+
+   $ wsl --install
 
 **Installation of Conda**
 
-``wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"``   
+.. code:: bash
 
-``bash Miniforge3-$(uname)-$(uname -m).sh``
-
-
+   $ wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+   $ bash Miniforge3-$(uname)-$(uname -m).sh
 
 **Install StemCNV-check**
 
