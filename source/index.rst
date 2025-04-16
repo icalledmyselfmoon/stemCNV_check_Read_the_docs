@@ -7,7 +7,10 @@ stemCNV-check Manual
 ===========================
 
 StemCNV-check is a tool written to simplify copy number variation (CNV) analysis of SNP array data, specifically for quality control of (pluripotent) stem cell lines. StemCNV-check uses snakemake to run the complete analysis from raw data (.idat) up report generation for all defined samples with a single command. Samples need to be defined in a (tabular) sample table and the workflow settings are defined through a yaml file.
-StemCNV-check requires a linux environment (or WSL on windows) and a working conda (or mamba) installation. Follow the recommended instructions to install conda or mamba.
+
+Requirements:
+-a linux environment (or WSL on windows) 
+-a working conda (or mamba) 
 
 Quality control of hPSC genetic integrity based on CNV detection in SNP-array data is the main purpose of the stemCNV-check tool. 
 Other functionalities include:
