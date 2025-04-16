@@ -4,7 +4,8 @@ Installation
 Step-by-step instructions for setting up and running StemCNV-check on Windows. 
 
 **WSL and Conda**
-Installation of WSL (Windows Subsystem for Linux)  
+
+**Installation of WSL (Windows Subsystem for Linux)  **
 ``wsl --install``
 
 **Installation of Conda**
