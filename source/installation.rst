@@ -19,6 +19,7 @@ Step-by-step instructions for setting up and running StemCNV-check on Windows.
     bash Miniforge3-$(uname)-$(uname -m).sh
 
 **Install StemCNV-check**
+
 **Clone the StemCNV-check git repository:**
 
 .. code:: bash
