@@ -2,7 +2,7 @@ Project setup
 ============
 
 
-**Setting up our own data for analysis with StemCNV-check requires:**
+**Setting up your own data for analysis with StemCNV-check requires:**
 
 - config file
 - manifest and static files (defined by the user in the config)
