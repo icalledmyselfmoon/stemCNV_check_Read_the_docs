@@ -3,7 +3,8 @@ Output
 
 StemCNV-check will produce the following output files for each sample, when run with default settings:
 - ``data_path/{sample}/{sample}.annotated-SNP-data.{filter}-filter.vcf.gz``  
-  The filtered, processed and annotated SNP data of the array in vcf format
+The filtered, processed and annotated SNP data of the array in vcf format
+
 - ``data_path/{sample}/{sample}.CNV_calls.CBS.vcf.gz``  
   The CNV calls for the sample from the CBS (Circular Binary Segmentation) algorithm in vcf format
 - ``data_path/{sample}/{sample}.CNV_calls.PennCNV.vcf.gz``  
