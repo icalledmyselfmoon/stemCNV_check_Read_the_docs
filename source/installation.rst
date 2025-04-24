@@ -1,15 +1,43 @@
 Installation
 ============
 
-Step-by-step instructions for setting up and running StemCNV-check on Windows. 
+Step-by-step instructions for setting up StemCNV-check for Windows and Linux. 
 
-**WSL and Conda**
+**For Windows: Installation of WSL (Windows Subsystem for Linux)**
 
-**Installation of WSL (Windows Subsystem for Linux)**
+Please also consult the  `official instructions <https://learn.microsoft.com/en-us/windows/wsl/installL>`_ for installing WSL, 
+especially if you encounter any problems. 
 
+In short:
+
+ - Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator" 
+ - Enter: 
 .. code:: bash
 
     wsl --install
+ - Follow the installation instructions
+   - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
+ 
+You can now start a linux environment using the WSL programm (ie. wsl.exe)
+
+ *Important*: Please note that all following commands in these instructions should be executed in the WSL console (and not in i.e. the windows powershell).
+
+
+**For both Windows and Linux**
+**Install dependencies**
+   
+   - for WSL(on Windows) ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
+   - for Linux           ``conda install python=3.12``
+
+
+**Set up conda environment only for StemCNV-check**
+
+.. code:: bash
+
+   conda create -n stemcnv-check python=3.12; conda activate stemcnv-check
+   cd StemCNV-check   #change into the StemCNV-check directory
+   pip install -e .   #install StemCNV-check and its dependencies with pip
+
 
 **Installation of Conda**
 
@@ -26,41 +54,8 @@ Step-by-step instructions for setting up and running StemCNV-check on Windows.
 
    git clone https://github.com/bihealth/StemCNV-check.git
 
-
-
-**Install dependencies**
-
-   - for Linux ``conda install python=3.12``
-   
-   - for WSL ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
-
-
-**Set up conda environment only for StemCNV-check**
-
-.. code:: bash
-
-   conda create -n stemcnv-check python=3.12; conda activate stemcnv-check
-   cd StemCNV-check   #change into the StemCNV-check directory
-   pip install -e .   #install StemCNV-check and its dependencies with pip
-
- 
-
-
 ## 1.1 (Windows only) Install WSL 
 
-Please also consult the [official instructions](https://learn.microsoft.com/en-us/windows/wsl/install) for installing WSL, 
-especially if you encounter any problems. 
-
-In short:
-
- - Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator" 
- - Enter: `wsl --install` 
- - Follow the installation instructions
-   - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
- 
-You can now start a linux environment using the WSL programm (ie. wsl.exe)
-
-> *Important*: Please note that all following commands in these instructions should be executed in the WSL console (and not in i.e. the windows powershell).
 
 
 ## 1.2 Install conda
