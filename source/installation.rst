@@ -12,9 +12,8 @@ In short:
 
  - Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator" 
  - Enter: 
-.. code:: bash
+    ``wsl --install``
 
-    wsl --install
  - Follow the installation instructions
    - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
  
