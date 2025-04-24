@@ -15,11 +15,11 @@ In short:
     ``wsl --install``
 
  - Follow the installation instructions
-   - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
+ - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
  
 You can now start a linux environment using the WSL programm (ie. wsl.exe)
 
- *Important*: Please note that all following commands in these instructions should be executed in the WSL console (and not in i.e. the windows powershell).
+*Important*: Please note that all following commands in these instructions should be executed in the WSL console (and not in i.e. the windows powershell).
 
 
 **For both Windows and Linux**
