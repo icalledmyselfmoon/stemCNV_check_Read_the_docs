@@ -47,8 +47,8 @@ After successful installation of conda you either have to restart WSL (close and
 
 **Install dependencies**
    
-   - for WSL(on Windows) ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
-   - for Linux           ``conda install python=3.12``
+   - for WSL (on Windows): ``conda install python=3.12 "gcc_linux-64<14" apptainer fuse-overlayfs``
+   - for Linux:           ``conda install python=3.12``
 
 
 **Set up conda environment only for StemCNV-check**
