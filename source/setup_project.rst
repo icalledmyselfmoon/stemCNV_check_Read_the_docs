@@ -184,7 +184,10 @@ To create the array specific files, follow these steps:
 This command will also print out the paths to the generated array specific files. You can either copy these paths your 
 project specific config file to use a complete array definition, or you can simply remove the array definition block 
 and rely on the automatically saved central definitions.
-**Running the analysis**
+
+Running the analysis
+____________________
+____________________
 
 Once the config file is properly set up and the necessary static files are generated, you can run the StemCNV-check
 workflow with simple command:   
