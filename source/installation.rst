@@ -3,7 +3,7 @@ Installation
 
 Step-by-step instructions for setting up StemCNV-check for Windows and Linux. 
 
-**For Windows: Installation of WSL (Windows Subsystem for Linux)**
+**1.1 For Windows: Installation of WSL (Windows Subsystem for Linux)**
 
 Please also consult the `official instructions <https://learn.microsoft.com/en-us/windows/wsl/installL>`_ for installing WSL, 
 especially if you encounter any problems. 
@@ -11,8 +11,7 @@ especially if you encounter any problems.
 In short:
 
  - Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator" 
- - Enter: 
-    ``wsl --install``
+ - Enter: ``wsl --install``
 
  - Follow the installation instructions
  - You will (likely) be asked to set a username and password for the linux environment. Do remember those.
