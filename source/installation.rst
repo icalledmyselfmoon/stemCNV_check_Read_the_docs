@@ -51,7 +51,7 @@ After successful installation of conda you either have to restart WSL (close and
 
 Perform the following steps to install and setup up the development version of StemCNV-check:
 
-**Clone the StemCNV-check git repository:**
+**Clone the StemCNV-check git repository**
 
 .. code:: bash
 
