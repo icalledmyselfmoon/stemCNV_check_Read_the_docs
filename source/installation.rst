@@ -47,10 +47,9 @@ After successful installation of conda you either have to restart WSL (close and
 
 **1.3 Install StemCNV-check**
 
- *Note*: we plan to release StemCNV-check via bioconda to take this step by simply running
-``conda install -c bioconda stemcnv-check``
+ *Note*: we plan to release StemCNV-check via bioconda to take this step by simply running  ``conda install -c bioconda stemcnv-check``
 
-**Perform the following steps to install and setup up the development version of StemCNV-check:**
+Perform the following steps to install and setup up the development version of StemCNV-check:
 
 **Clone the StemCNV-check git repository:**
 
