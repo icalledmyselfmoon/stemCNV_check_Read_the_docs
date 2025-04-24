@@ -1,7 +1,5 @@
-
-   Output
-  ------
-  ------
+Output
+============
 
 StemCNV-check will produce the following output files for each sample, when run with default settings:
 - ``data_path/{sample}/{sample}.annotated-SNP-data.{filter}-filter.vcf.gz``  
