@@ -167,7 +167,7 @@ This column has auto-formatting enabled, so that the IDs will work with the CNV-
 - Gene edited (yes/no)	
 - Passages after editing	
 - Type of editing	
-- `Modification <https://scc-docs.charite.de/openkm/kcenter/#/browser/uuid/6f505d68-4e61-4f2d-a46d-4ad434ea94d5>_`
+- `Modification <https://scc-docs.charite.de/openkm/kcenter/#/browser/uuid/6f505d68-4e61-4f2d-a46d-4ad434ea94d5>`_
 - Chromosome	
 - ROI for StemCNV-Check	Bank	
 - Cell type	
@@ -182,7 +182,9 @@ This column has auto-formatting enabled, so that the IDs will work with the CNV-
 - Data received (date)	
 - Sample_Name (L&B)	
 - Chip/Sentrix Barcode (L&B)	
-- SentrixPosition (L&B)	Chip Type (L&B)	Manifest Version	
+- SentrixPosition (L&B)	
+- Chip Type (L&B)	
+- Manifest Version	
 - Pass/fail	
 - Analysis by	
 - Report generated/  updated	
