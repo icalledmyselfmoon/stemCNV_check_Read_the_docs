@@ -44,5 +44,6 @@ Workflow overview
 
     installation
     setup_project
+    trouble_shooting 
     
 
