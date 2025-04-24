@@ -22,9 +22,9 @@ You can now start a linux environment using the WSL programm (ie. wsl.exe)
 *Important*: Please note that all following commands in these instructions should be executed in the WSL console (and not in i.e. the windows powershell).
 
 
-**For both Windows and Linux**
+For Windows and Linux
 ----------
-** 1.2 Installation of Conda**
+**1.2 Installation of Conda**
 
 Conda is software that facilitates the distribution and installation of primarily scientific software with the ability 
 to control which specific versions are used. StemCNV-check utilises this for almost all steps of the workflow and 
@@ -37,6 +37,14 @@ Install the `miniforge conda <https://github.com/conda-forge/miniforge>`_. In sh
 
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
     bash Miniforge3-$(uname)-$(uname -m).sh
+
+During the installation follow instructions and suggestions that are displayed in the terminal. When asked about updating 
+the shell profile to the allow automatic initialisation of conda, do answer/type: `yes` instead of the default no, 
+in all other cases the default answers should let you continue.
+
+After successful installation of conda you either have to restart WSL (close and reopen the window) or reload the updated 
+.bashrc of WSL: `source ~/.bashrc`.
+
 
 **Install dependencies**
    
@@ -53,7 +61,7 @@ Install the `miniforge conda <https://github.com/conda-forge/miniforge>`_. In sh
    pip install -e .   #install StemCNV-check and its dependencies with pip
 
 
-** 1.3 Install StemCNV-check**
+**1.3 Install StemCNV-check**
 
 **Clone the StemCNV-check git repository:**
 
@@ -61,15 +69,6 @@ Install the `miniforge conda <https://github.com/conda-forge/miniforge>`_. In sh
 
    git clone https://github.com/bihealth/StemCNV-check.git
 
-
-
-
-During the installation follow instructions and suggestions that are displayed in the terminal. When asked about updating 
-the shell profile to the allow automatic initialisation of conda, do answer/type: `yes` instead of the default no, 
-in all other cases the default answers should let you continue.
-
-After successful installation of conda you either have to restart WSL (close and reopen the window) or reload the updated 
-.bashrc of WSL: `source ~/.bashrc`.
 
 
 ##  Install StemCNV-check
