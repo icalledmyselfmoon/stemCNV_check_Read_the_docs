@@ -55,19 +55,18 @@ you are interested in setting additional parameters or changing the content of t
 Sample table
 -----------
 
+The sample table (default: sample_table.tsv) is a tab-separated file describing all samples to be analyzed. Excel or tsv formats are supported.
+
 Empty example files for the sample table and config can be created with this command:
 ``stemcnv-check setup-files``
 
-**Fill in the sample table with your data**
+If you prefer to use an xlsx file here you can create an example by using:  
+``stemcnv-check setup-files --sampletable-format xlsx``
 
-Sample table lists the samples to be analyzed and their properties.and their properties. It is recommended to keep all samples of one project in a single table.
-The sample table (default: sample_table.tsv) is a tab-separated file describing all samples to be analyzed:
+**Fill in the sample table with your data**
 
 - Required columns: Sample_ID, Chip_Name, Chip_Pos, Array_Name, Sex, Reference_Sample
 - Optional (reserved) columns: Regions_of_Interest
-
-If you prefer to use an xlsx file here you can create an example by using:  
-``stemcnv-check setup-files --sampletable-format xlsx``
 
 You can also use your own Excel file, if the following criteria are met:
 
@@ -153,7 +152,47 @@ You can also use your own Excel file, if the following criteria are met:
      - 
      - NA24695
 
+**Extended sample table. Description of the data types contained in the columns.**
 
+- Sample_ID 
+CORE unique (Include bank ID when possible, only: - or _, do not use special characters: (), {}, /, \, ~,*, & Name has to be UNIQUE)	
+This column has auto-formatting enabled, so that the IDs will work with the CNV-pipeline:
+	- red entries are either duplicate or contain not-allowed characters (/ and \)
+	- orange entries contain characters that the pipeline will remove (since they can cause issues if used in file names):  :,;()[]{}!?* and <space>
+
+- Line family (iPSC line names without the clone part)	
+- DNA ID/ Barcode (CORE)	
+- Gender	
+- Passage	
+- Gene edited (yes/no)	
+- Passages after editing	
+- Type of editing	
+- Modification 	https://scc-docs.charite.de/openkm/kcenter/#/browser/uuid/6f505d68-4e61-4f2d-a46d-4ad434ea94d5 
+- Chromosome	
+- ROI for StemCNV-Check	Bank	
+- Cell type	
+- latest parental CONTROL sample (patient cells or preceeding Bank MB/WB/Seed)	
+- earliest parental CONTROL (patient cells or MB)	
+- AG (resp user)	
+- Service request ID openIRIS	
+- Responsible person (CORE)	
+- Batch group	
+- Additional references (e.g. for dendrogram)	
+- Send to L&B (date)	
+- Data received (date)	
+- Sample_Name (L&B)	
+- Chip/Sentrix Barcode (L&B)	
+- SentrixPosition (L&B)	Chip Type (L&B)	Manifest Version	
+- Pass/fail	
+- Analysis by	
+- Report generated/  updated	
+- Results/Comment	
+- known CNVs in this line	
+- Sample derived from	
+- Culture medium (used for routine maintenance culture)	Coating	Hypoxya (5% O2)/ Normoxya (20% O2)	
+- Passaging method (for routine maintenance)	
+- Survival factor for enzymatic passaging (maintenance)	
+- Reprogramming method
 
 Generating (array specific) static files
 -----------------------------------
