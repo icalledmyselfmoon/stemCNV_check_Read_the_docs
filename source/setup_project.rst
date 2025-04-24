@@ -157,7 +157,8 @@ You can also use your own Excel file, if the following criteria are met:
 - Sample_ID 
 CORE unique (Include bank ID when possible, only: - or _, do not use special characters: (), {}, /, \, ~,*, & Name has to be UNIQUE). 
 This column has auto-formatting enabled, so that the IDs will work with the CNV-pipeline:
-		- red entries are either duplicate or contain not-allowed characters (/ and \)
+		- red entries are either duplicate or contain not-allowed characters (/ and .\)
+
 		- orange entries contain characters that the pipeline will remove (since they can cause issues if used in file names):  :,;()[]{}!?* and <space>
 
 - Line family (iPSC line names without the clone part)	
@@ -168,16 +169,21 @@ This column has auto-formatting enabled, so that the IDs will work with the CNV-
 - Passages after editing	
 - Type of editing	
 - `Modification <https://scc-docs.charite.de/openkm/kcenter/#/browser/uuid/6f505d68-4e61-4f2d-a46d-4ad434ea94d5>`_
+Check Gene Editing Overview table to input correct modification
 - Chromosome	
-- ROI for StemCNV-Check	Bank	
-- Cell type	
+- ROI for StemCNV-Check	
+- Bank	(Only use: MBXX WBXX seed primary)
+- Cell type	(iPSC/reference)
 - latest parental CONTROL sample (patient cells or preceeding Bank MB/WB/Seed)	
+If it is not 'reference' then sample name chosen for this column MUST exist in the first column
 - earliest parental CONTROL (patient cells or MB)	
+If it is not 'reference' then sample name chosen for this column MUST exist in the first column
 - AG (resp user)	
 - Service request ID openIRIS	
 - Responsible person (CORE)	
 - Batch group	
 - Additional references (e.g. for dendrogram)	
+This column works the same as the "Parental Control" one, except that you can add multiple references separated by commas (in the same field). Excel can not do conditional formatting for that.
 - Send to L&B (date)	
 - Data received (date)	
 - Sample_Name (L&B)	
@@ -185,7 +191,7 @@ This column has auto-formatting enabled, so that the IDs will work with the CNV-
 - SentrixPosition (L&B)	
 - Chip Type (L&B)	
 - Manifest Version	
-- Pass/fail	
+- Pass/fail (Use pass/fail ONLY for non-reference samples!!)
 - Analysis by	
 - Report generated/  updated	
 - Results/Comment	
