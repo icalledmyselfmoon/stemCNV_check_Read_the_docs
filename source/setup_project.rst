@@ -175,15 +175,15 @@ You can also use your own Excel file, if the following criteria are met:
 - Bank	(Only use: MBXX WBXX seed primary)
 - Cell type (iPSC/reference)
 - latest parental CONTROL sample (patient cells or preceeding Bank MB/WB/Seed)	
-  If it is not 'reference' then sample name chosen for this column MUST exist in the first column
+    If it is not 'reference' then sample name chosen for this column MUST exist in the first column
 - earliest parental CONTROL (patient cells or MB)	
-  If it is not 'reference' then sample name chosen for this column MUST exist in the first column
+    If it is not 'reference' then sample name chosen for this column MUST exist in the first column
 - AG (resp user)	
 - Service request ID openIRIS	
 - Responsible person (CORE)	
 - Batch group	
 - Additional references (e.g. for dendrogram)	
-  This column works the same as the "Parental Control" one, except that you can add multiple references separated by commas (in the same field). Excel can not do conditional formatting for that.
+    This column works the same as the "Parental Control" one, except that you can add multiple references separated by commas (in the same field). Excel can not do conditional formatting for that.
 - Send to L&B (date)	
 - Data received (date)	
 - Sample_Name (L&B)	
