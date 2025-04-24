@@ -1,4 +1,4 @@
-Project setup
+Running StemCNV-check
 ============
 
 
