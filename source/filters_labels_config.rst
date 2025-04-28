@@ -8,7 +8,7 @@ Making changes in the config file allows to edit analysis settings.
 
 Array definition 
 --------------
-**genome_version options: **
+**genome_version options:**
 -hg38 or GRCh38
 -hg19 or GRCh37
 
