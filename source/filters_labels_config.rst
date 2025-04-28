@@ -1,6 +1,6 @@
- Config file options
-------------------
------------------- 
+Config file options
+============
+
 Making changes in the config file allows to edit analysis settings.
  
 -Open the config.yaml in text editor 
@@ -11,7 +11,7 @@ Making changes in the config file allows to edit analysis settings.
 - hg19 or GRCh37
 
 Array definition 
- --------------
+--------------
 **genome_version options: **
 -hg38 or GRCh38
 -hg19 or GRCh37
