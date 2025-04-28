@@ -46,5 +46,6 @@ Workflow overview
     setup_project
     trouble_shooting 
     output_files
+    filters_labels_config
     
 
