@@ -1,7 +1,24 @@
  Config file options
 ------------------
 ------------------ 
+Making changes in the config file allows to edit analysis settings.
+ 
+-Open the config.yaml in text editor 
+-Type in or change the necessary variables
 
+**genome_version options: **
+-hg38 or GRCh38
+- hg19 or GRCh37
+
+Array definition 
+ --------------
+**genome_version options: **
+-hg38 or GRCh38
+-hg19 or GRCh37
+
+
+ Probe filtering
+ --------------
 
 Filter settings are defined in the StemCNV-check config
  StemCNV-check allows the definition of probe filter settings including:
@@ -13,10 +30,6 @@ recommended default settings for probe filtering in StemCNV-check
 - minimum GC and GT scores of 0.15
 - keeping only highest GC probes from duplicate positions 
 - removing probes in the pseudo-autosmal (PAR1, PAR2) and X-translocated (XTR) region from male samples, probes on the Y chromosome are always filtered for samples annotated as female. 
-
-
- Probe filtering
- --------------
 
 .. list-table::  Filters 
    :widths: 15 15 
