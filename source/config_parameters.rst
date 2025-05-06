@@ -27,6 +27,8 @@ and can be used for any genome version).
 Other array specific files mentioned in the config can be auto-generated (see next step below).
 
 
+- 'ExampleArray' *should* to be renamed to the actual array name
+
 - **genome_version options:** hg38/GRCh38 or hg19/GRCh37
 
 - **egt_cluster_file**: the illumina cluster file (.egt) for the array platform, available from Illumina or the provider running the array
@@ -39,6 +41,8 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 - **data_path**: the output of StemCNV-check will be written to this path
 - **log_path**: the log files of StemCNV-check will be written to this path
 
+
+**Labelling system**
 
 **Specification of labels (and their report colors) assigned to sample level QC measures**
 sample_labels:
