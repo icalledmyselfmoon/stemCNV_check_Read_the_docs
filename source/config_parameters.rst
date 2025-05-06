@@ -131,6 +131,8 @@ report_plotsections:
   - regions_of_interest
 
 
+Sample table 
+============
 
 
 Required Columns are: Sample_ID, Chip_Name, Chip_Pos, Array_Name, Sex, Reference_Sample, Regions_of_Interest, Sample_Group
