@@ -8,7 +8,7 @@ The default config file (config.yaml) defines all settings for the analysis and 
 Adjust the config file so that all entries marked as ``“#REQUIRED”`` are filled in.
 
 
-**Array_definition**
+**Array definition**
 -------------
 
 •  Multiple arrays can be defined here, but arrays defined in global config saved in the cache are also available. The config file will take precedence over the global config, unless the file names here can not be used. Each array needs all required entries, but the `stemcnv-check make-staticdata` command will generate files marked as auto-generatable. By default both the files and an update to a global array definition file will be written into the cache directory (unless --no-cache is used). By default this file is at  ~/.cache/stemcnv-check/global_array_definitions.yaml. Once the array definitions are in the global file, you need to either delete the 'array_definition' block here or also update it with the information written out by `stemcnv-check make-staticdata` (which is the same as the entry written into the global array definition config), since this config takes precedence over the global file.
@@ -26,7 +26,7 @@ and can be used for any genome version).
 Other array specific files mentioned in the config can be auto-generated (see next step below).
 
 
-- 'ExampleArray' should to be renamed to the actual array name
+- **'ExampleArray'** should to be renamed to the actual array name
 
 - **genome_version options:** hg38/GRCh38 or hg19/GRCh37
 
@@ -61,6 +61,43 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 
 **Evaluation settings**
 ---------------
+
+All CNV calls are given a label based on their check score, filters and reference match. The labels described here are always available, but can be changed or new labels can be added. If not other category fits (which should not occur with default settings), then the last defined "Exclude call" label will always be assigned.
+
+  •  Possible values for the "not_allowed_vcf_filters" list are: **probe_gap, high_probe_dens, min_size, min_probes, min_density**
+
+  
+
+.. list-table::  CNV_call_labels
+   :widths: 25 25 25 25  
+   :header-rows: 1
+
+   * - CNV_call_labels
+     - minimum_check_score
+     - not_allowed_vcf_filters
+     - reference_match
+
+   * - Critical de-novo
+     - 55
+     -  ['high_probe_dens', 'probe_gap', 'min_size', 'min_probes', 'min_density']
+     - FALSE
+   * - Reportable de-novo
+     - 55
+     -  ['min_size', 'min_probes', 'min_density']
+     - FALSE
+   * - de-novo call
+     - 0
+     - ['min_size', 'min_probes', 'min_density']
+     - FALSE
+   * - Reference genotype
+     - 0
+     - []
+     - TRUE
+   * - Excluded call
+     - 0
+     - []
+     - FALSE
+
 
 **Labelling system**
 
