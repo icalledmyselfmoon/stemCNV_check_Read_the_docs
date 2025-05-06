@@ -27,7 +27,7 @@ and can be used for any genome version).
 Other array specific files mentioned in the config can be auto-generated (see next step below).
 
 
-- 'ExampleArray' *should* to be renamed to the actual array name
+- 'ExampleArray' should to be renamed to the actual array name
 
 - **genome_version options:** hg38/GRCh38 or hg19/GRCh37
 
@@ -36,10 +36,11 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 - **bpm_manifest_file**: the beadpool manifest file (.bpm) for the array platform, available from Illumina or the provider running the array
 - **csv_manifest_file** (optional): the manifest file in csv format, available from Illumina or the provider running the array
 
-- **raw_data_folder**: path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs)
+- **raw_data_folder**: input folder, path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs). 
+**idat files should be grouped in a subfolder per array-chip (sentrix_name)**
 
 - **data_path**: the output of StemCNV-check will be written to this path
-- **log_path**: the log files of StemCNV-check will be written to this path
+- **log_path**:  output folder, stemcnv-check will write log filesthe log files of StemCNV-check to this path
 
 .. image:: array_def.png
    :width: 600
