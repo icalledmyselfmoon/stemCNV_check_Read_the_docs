@@ -1,27 +1,37 @@
 Config file options
 ============
 
-Setting analysis parameters or changing them requires editing the text in  generated default config file. Start by opening the config.yaml in text editor. Then type in or change the necessary parameters
-
-
-**Array definition**
-**genome_version options:**
--hg38 or GRCh38
--hg19 or GRCh37
-
-
-Config file
------------
-The config file (default: config.yaml) defines all settings for the analysis and inherits from the inbuilt default, as 
-well as system-wide array definitions if those exist. While most of the settings can be left on default, the input files 
-need to be defined. Among those are also the files for the definition of the array platform, which are the primary 
-required settings apart from raw data locations, that can not have defined defaults in the config file created by the 
-setup-files command. The array definition needed for StemCNV-check includes the following files:
+Setting analysis parameters or changing them requires editing the text in  generated default config file. Start by opening the config.yaml in text editor. Then type in or change the necessary parameters. 
 
 The default config file (config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
 
 *Adjust the config file* so that all entries marked as
 ``“#REQUIRED”`` are filled in.
+
+
+**array_definition**
+
+Multiple arrays can be defined here, but arrays defined in global config saved in the cache are also available. The config file will take precedence over the global config, unless the file names here can not be used. Each array needs all required entries, but the `stemcnv-check make-staticdata` command will generate files marked as auto-generatable. By default both the files and an update to a global array definition file will be written into the cache directory (unless --no-cache is used). By default this file is at  ~/.cache/stemcnv-check/global_array_definitions.yaml
+
+Once the array definitions are in the global file, you need to either delete the 'array_definition' block here or also update it with the information written out by `stemcnv-check make-staticdata` (which is the same as the entry written into the global array definition config), since this config takes precedence over the global file.
+
+If no global config was used during the `make-staticdata` run, i.e. due to the --no-cache flag the array definitions will instead be written to a local file, i.e. 'ExampleArray_config.yaml' in the current working directory. In this case you will need to copy the contents of that file into this one, or alternatively into a global array definition file, that can still be created.
+
+
+The config file (default: config.yaml) defines all settings for the analysis and inherits from the inbuilt default, as 
+well as system-wide array definitions if those exist. While most of the settings can be left on default, the input files 
+need to be defined. The file paths for these files need to be entered in the config under the 'array_definition' section. In this section 
+you also need to give your array a name (that needs to match the 'Array_Name' column in the sample table) and define a 
+genome version (hg19 or hg38). Please note that the Illumina bpm and csv manifest files are also specific to a certain 
+genome version, usually files for hg19 end in 'A1' and those for hg38 end in 'A2' (the egt cluster file is not specific 
+and can be used for any genome version).  
+Other array specific files mentioned in the config can be auto-generated (see next step below).
+
+
+**genome_version options:**
+-hg38 or GRCh38
+-hg19 or GRCh37
+
 
 **Define  files specific to the used array platform and genome build:**
 
@@ -29,16 +39,6 @@ The default config file (config.yaml) defines all settings for the analysis and 
 
 - **bpm_manifest_file**: the beadpool manifest file (.bpm) for the array platform, available from Illumina or the provider running the array
 - **csv_manifest_file** (optional): the manifest file in csv format, available from Illumina or the provider running the array
-
-
-The file paths for these files need to be entered in the config under the 'array_definition' section. In this section 
-you also need to give your array a name (that needs to match the 'Array_Name' column in the sample table) and define a 
-genome version (hg19 or hg38). Please note that the Illumina bpm and csv manifest files are also specific to a certain 
-genome version, usually files for hg19 end in 'A1' and those for hg38 end in 'A2' (the egt cluster file is not specific 
-and can be used for any genome version).  
-Other array specific files mentioned in the config can be auto-generated (see next step below).
-
-**The config file needs to define the following paths:**
 
 - **raw_data_folder**: path to the input directory under which the raw data (.idat) can be found. Ths folder should contain subfolders that match the Chip_Name column in the sample table (containing the array chip IDs)
 
@@ -52,125 +52,94 @@ you are interested in setting additional parameters or changing the content of t
 --config-details medium to the command (also available with ‘advanced’ or ‘complete’ instead of ‘medium’)
 
 
-Sample table
------------
+**Specification of labels (and their report colors) assigned to sample level QC measures**
+sample_labels:
+    OK: green
+    unusual: yellow
+    warning: orange
+    high concern: red
 
-The sample table (default: sample_table.tsv) is a tab-separated file describing all samples to be analyzed. Excel or tsv formats are supported.
-Empty example files for the sample table and config can be created with this command:
+# Default labels for CNVs (more can be added by users)
+CNV_labels:
+    # This is used to count critical CNVs & LOHs
+    - Critical de-novo
+    # This is used to count reportable CNVs & LOHs
+    - Reportable de-novo
+    - de-novo call
+    - Reference genotype
+    - Excluded call
 
-``stemcnv-check setup-files``
+# possible labels for SNVs
+SNV_labels:
+    - critical
+    - reportable
+    - unreliable impact
+    - de-novo SNV
+    - reference genotype
 
-If you prefer to use an xlsx file here you can create an example by using:  
+**Label for CNVs merged from multiple callers**
 
-``stemcnv-check setup-files --sampletable-format xlsx``
+combined_cnvs: 'combined-call'
 
-**Fill in the sample table with your data**
+**The following lists are primarily used by the check_config functions**
 
-- Required columns: Sample_ID, Chip_Name, Chip_Pos, Array_Name, Sex, Reference_Sample
-- Optional (reserved) columns: Regions_of_Interest
+Possible/Defined FILTERs applied to CNV calls (vcf style)
 
-You can also use your own Excel file, if the following criteria are met:
+vcf_filters:
+    - probe_gap
+    - high_probe_dens 
+    - min_size 
+    - min_probes
+    - min_density
 
-- The actual sampletable is in the first sheet of the file and this sheet *only* contains columns for the sample table 
-  (optionally with commented lines starting with a '#')
+**Possible/Defined categories for SNVs, each category can be assigned critical or reportable**
+SNV_category_labels:
+    - ROI-overlap
+    - hotspot-match
+    - hotspot-gene
+    - protein-ablation
+    - protein-changing
+    - other
 
-- All required columns are present and correctly named (the order of columns is not important)
-  - It is possible to deviate from the standard column names, but the expected column names need be contained in the acutal 
-    column names and there needs to a singular way to extract them (via regex). 
-  - In this case you need to use the ``--column-remove-regex`` option to tell the pipeline how to modify your column names 
-    to derive the expected names. If used without an explicit regex (for expert users) spaces and anything following 
-    them will be removed from your column names.
+**Possible/Defined QC measures on sample level**
+sample_qc_measures:
+    - call_rate
+    - computed_gender
+    - SNPs_post_filter
+    - SNP_pairwise_distance_to_reference
+    - loss_gain_log2ratio
+    - total_calls_CNV
+    - total_calls_LOH
+    - reportable_calls_CNV
+    - reportable_calls_LOH
+    - reportable_SNVs
+    - critical_calls_CNV
+    - critical_calls_LOH
+    - critical_SNVs
+  
+**Possible/Defined report sections**
+report_sections:
+  - sample.information
+  - QC.summary
+  - QC.GenCall
+  - QC.PennCNV
+  - QC.CBS
+  - QC.settings
+  - SNV.table
+  - SNV.hotspot.coverage
+  - SNV.QC.details
+  - denovo_calls.table
+  - denovo_calls.plots
+  - reference_gt_calls.table
+  - reference_gt_calls.plots
+  - regions.of.interest
+  - SNP.dendrogram
+  - genome.overview
 
-  - A simple example with ``--column-remove-regex`` (default) option would be to use i.e:  
-    'Sample_ID for pipeline', 'Chip_Name (Sentrix Barcode)', 'Chip_Pos (Sentrix Position)'
-
-								
-.. list-table::  Example Sample table
-   :widths: 15 15 10 10 10 10 10 10 10 
-   :header-rows: 1
-								
-   * - Sample_ID 
-     - Chip_Name
-     - Chip_Pos
-     - Array_Name
-     - Sex
-     - Reference_Sample
-     - Regions_of_Interest
-     - Sample_Group
-     - Coriell_ID
-   * - HG001
-     - 207521920117
-     - R09C02
-     - ExampleArray
-     - female
-     -
-     -
-     - 
-     - NA12878
-   * - HG002
-     - 207521920117
-     - R05C02
-     - ExampleArray
-     - male
-     -
-     -
-     - 
-     - NA24385
-   * - HG004
-     - 207521920117
-     - R07C02
-     - ExampleArray
-     - female				
-     -
-     -
-     - 
-     - NA24143
-   * - HG005
-     - 207521920117
-     - R01C02
-     - ExampleArray
-     - male
-     -
-     -
-     - HG006
-     - NA24631
-
-
-**Extended sample table. Description of the data types contained in the columns.**
-
-- Sample_ID
-Include bank ID when possible, only: - or _, do not use special characters: (), {}, /, \, ~,*, & Name has to be UNIQUE.
-This column has auto-formatting enabled, so that the IDs will work with the CNV-pipeline:
-	- red entries are either duplicate or contain not-allowed characters (/ and .\)
-	- orange entries contain characters that the pipeline will remove (since they can cause issues if used in file names):  :,;()[]{}!?* and <space>
-
-- Line family (iPSC line names without the clone part)	
-- DNA ID/ Barcode (CORE)	
-- Gender	
-- Passage	
-- Gene edited (yes/no)	
-- Passages after editing	
-- Type of editing	
-- `Modification <https://scc-docs.charite.de/openkm/kcenter/#/browser/uuid/6f505d68-4e61-4f2d-a46d-4ad434ea94d5>`_ . Check Gene Editing Overview table to input correct modification
-- Chromosome	
-- ROI for StemCNV-Check	
-- Bank	(Only use: MBXX WBXX seed primary)
-- Cell type (iPSC/reference)
-- latest parental CONTROL sample (patient cells or preceeding Bank MB/WB/Seed). If it is not 'reference' then sample name chosen for this column MUST exist in the first column
-- earliest parental CONTROL (patient cells or MB). If it is not 'reference' then sample name chosen for this column MUST exist in the first column
-- AG (resp user)	
-- Service request ID openIRIS	
-- Responsible person (CORE)	
-- Batch group	
-- Additional references (e.g. for dendrogram). This column works the same as the "Parental Control" one, except that you can add multiple references separated by commas (in the same field). Excel can not do conditional formatting for that.
-- Send to L&B (date)	
-- Data received (date)	
-- Sample_Name (L&B)	
-- Chip/Sentrix Barcode (L&B)	
-- SentrixPosition (L&B)	
-- Chip Type (L&B)	
-- Manifest Version	
-- Pass/fail (Use pass/fail ONLY for non-reference samples!!)
-- Analysis by	
+**Possible/Defined subsections in the CNV plot sections**
+report_plotsections:
+  - denovo
+  - reference_gt
+  - regions_of_interest
 
 
