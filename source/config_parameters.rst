@@ -3,15 +3,8 @@ Config file options
 
 Setting analysis parameters or changing them requires editing the text in  generated default config file. Start by opening the config.yaml in text editor. Then type in or change the necessary parameters
 
-**Setting up your own data for analysis with StemCNV-check requires:**
 
-- config file
-- manifest and static files: egt_cluster_file, bpm_manifest_file, csv_manifest_file (optional)
-- sample table
-
-
-Array definition 
---------------
+**Array definition**
 **genome_version options:**
 -hg38 or GRCh38
 -hg19 or GRCh37
