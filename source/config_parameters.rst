@@ -41,6 +41,8 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 - **data_path**: the output of StemCNV-check will be written to this path
 - **log_path**: the log files of StemCNV-check will be written to this path
 
+.. image:: array_def.png
+   :width: 600
 
 **Labelling system**
 
