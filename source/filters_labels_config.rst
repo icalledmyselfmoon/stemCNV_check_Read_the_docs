@@ -1,11 +1,10 @@
-
 Config file options
 ============
 
 Making changes in the config file allows to edit analysis settings.
  
-- open the config.yaml in text editor 
-- type in or change the necessary variables
+-Open the config.yaml in text editor 
+-Type in or change the necessary variables
 
 Array definition 
 --------------
