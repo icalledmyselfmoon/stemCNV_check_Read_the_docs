@@ -42,8 +42,23 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 - **data_path**: the output of StemCNV-check will be written to this path
 - **log_path**:  output folder, stemcnv-check will write log filesthe log files of StemCNV-check to this path
 
-.. image:: array_def.png
-   :width: 600
+.. code:: bash
+
+   array_definition:
+        GSAMD-24v3-0:
+          genome_version: hg38
+          bpm_manifest_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A2.bpm   #REQUIRED
+          csv_manifest_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A2.csv
+          egt_cluster_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A1.egt
+          #Optional (leave empty if not used)
+          penncnv_GCmodel_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/PennCNV-GCmodel_hg38_GSAMD-v24.gcmodel
+          array_density_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/density_hg38_GSAMD-v24.bed
+          array_gaps_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/gaps_hg38_GSAMD-v24.bed
+          penncnv_pfb_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/PennCNV-PFB_hg38_GSAMD-v24.pfb
+    
+   raw_data_folder: ../RAW_DATA #REQUIRED, Note: gencall has a hard time following links
+   data_path: data_scoring     #REQUIRED
+   log_path: logs/scoring      #REQUIRED
 
 **Labelling system**
 
