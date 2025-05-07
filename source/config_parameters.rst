@@ -50,9 +50,9 @@ Other array specific files mentioned in the config can be auto-generated (see ne
           egt_cluster_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.csv.gz'
           #Optional (leave empty if not used)
           penncnv_GCmodel_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.egt'
-          array_density_file: static-data/ExampleArray/density_hg19_ExampleArray.bed
-          array_gaps_file: static-data/ExampleArray/gaps_hg19_ExampleArray.bed
-          penncnv_pfb_file: static-data/ExampleArray/PennCNV-PFB_hg19_ExampleArray.pfb
+          array_density_file: 'static-data/ExampleArray/density_hg19_ExampleArray.bed'
+          array_gaps_file: 'static-data/ExampleArray/gaps_hg19_ExampleArray.bed'
+          penncnv_pfb_file: 'static-data/ExampleArray/PennCNV-PFB_hg19_ExampleArray.pfb'
     
    raw_data_folder: ../RAW_DATA #REQUIRED
    data_path: data_scoring     #REQUIRED
