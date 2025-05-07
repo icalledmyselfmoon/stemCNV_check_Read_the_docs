@@ -1,7 +1,12 @@
-Config file options
+First analysis
+============
+Before the first analysis sample table and config file need to be set up (see above). Unless otherwise specified, stemcnv-check defaults to look for a "sample_table.tsv" (or .xlsx) and "config.yaml" file.
+
+
+Config file settings
 ============
 
-Setting analysis parameters or changing them requires editing the text in  generated default config file. Start by opening the config.yaml in text editor. Then type in or change the necessary parameters. 
+Setting analysis parameters or changing them requires editing the text in the generated default config file. Start by opening the config.yaml in text editor. Then type in or change the necessary parameters. 
 
 The default config file (config.yaml) defines all settings for the analysis and inherits from the inbuilt default.
 
@@ -10,11 +15,6 @@ Adjust the config file so that all entries marked as ``“#REQUIRED”`` are fil
 
 **Array definition**
 -------------
-
-•  Multiple arrays can be defined here, but arrays defined in global config saved in the cache are also available. The config file will take precedence over the global config, unless the file names here can not be used. Each array needs all required entries, but the `stemcnv-check make-staticdata` command will generate files marked as auto-generatable. By default both the files and an update to a global array definition file will be written into the cache directory (unless --no-cache is used). By default this file is at  ~/.cache/stemcnv-check/global_array_definitions.yaml. Once the array definitions are in the global file, you need to either delete the 'array_definition' block here or also update it with the information written out by `stemcnv-check make-staticdata` (which is the same as the entry written into the global array definition config), since this config takes precedence over the global file.
-
-•  If no global config was used during the `make-staticdata` run, i.e. due to the --no-cache flag the array definitions will instead be written to a local file, i.e. 'ExampleArray_config.yaml' in the current working directory. In this case you will need to copy the contents of that file into this one, or alternatively into a global array definition file, that can still be created.
-
 
 The config file (default: config.yaml) defines all settings for the analysis and inherits from the inbuilt default, as 
 well as system-wide array definitions if those exist. While most of the settings can be left on default, the input files 
@@ -224,5 +224,21 @@ Specific explanations for columns:
        Multiple regions for a single sample should all be in one column entry and be separated by a `;`
  - Sample_Group
        This column can be used for annotation samples is used by default to select samples for clustering by SNPs.  
+
+
+Static files generation
+============
+
+This step takes place after the  sample data for that array is available, sample table and the config file have been set up.
+
+**Array & genome-build specific static files** are automatic generated. 
+
+.. code:: bash
+
+stemcnv-check make-staticdata [-s <sample_table>] [-c <config_file>]
+
+Notes:
+unless specified directly in the config this will also include download of **fasta and gtf** file for the reference genome build.
+Array specific files and an updated array_definition block for the config will be written into the cache directory (default: '~/.cache/stemcnv-check'). However, you still need to update or remove the array_definition from your config.yaml file, otherwise the cached definitions and files will not be used.
 
 
