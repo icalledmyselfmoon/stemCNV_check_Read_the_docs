@@ -44,19 +44,23 @@ Other array specific files mentioned in the config can be auto-generated (see ne
 
    array_definition:
         GSAMD-24v3-0:
-          genome_version: hg38
-          bpm_manifest_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A2.bpm   #REQUIRED
-          csv_manifest_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A2.csv
-          egt_cluster_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/GSAMD-24v3-0-EA_20034606_A1.egt
+          genome_version: 'hg19'
+          bpm_manifest_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.bpm'  #REQUIRED
+          csv_manifest_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.csv.gz'
+          egt_cluster_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.csv.gz'
           #Optional (leave empty if not used)
-          penncnv_GCmodel_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/PennCNV-GCmodel_hg38_GSAMD-v24.gcmodel
-          array_density_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/density_hg38_GSAMD-v24.bed
-          array_gaps_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/gaps_hg38_GSAMD-v24.bed
-          penncnv_pfb_file: /data/cephfs-1/work/projects/stachelscheid-cellline-arrays/static-data/PennCNV-PFB_hg38_GSAMD-v24.pfb
+          penncnv_GCmodel_file: 'static-data/ExampleArray/GSAMD-24v3-0-EA_20034606_A1.egt'
+          array_density_file: static-data/ExampleArray/density_hg19_ExampleArray.bed
+          array_gaps_file: static-data/ExampleArray/gaps_hg19_ExampleArray.bed
+          penncnv_pfb_file: static-data/ExampleArray/PennCNV-PFB_hg19_ExampleArray.pfb
     
-   raw_data_folder: ../RAW_DATA #REQUIRED, Note: gencall has a hard time following links
+   raw_data_folder: ../RAW_DATA #REQUIRED
    data_path: data_scoring     #REQUIRED
-   log_path: logs/scoring      #REQUIRED
+   log_path: logs    #REQUIRED
+
+   reports:
+        StemCNV-check-report:
+          file_type: 'html'
 
 
 **Evaluation settings**
@@ -238,9 +242,7 @@ This step takes place after the  sample data for that array is available, sample
    stemcnv-check make-staticdata [-s <sample_table>] [-c <config_file>]
 
 
-Notes:
-
-unless specified directly in the config this will also include download of **fasta and gtf** file for the reference genome build.
+*Notes:* This step will also include **download of fasta and gtf** file for the reference genome build.**
 Array specific files and an updated array_definition block for the config will be written into the cache directory (default: '~/.cache/stemcnv-check'). However, you still need to update or remove the array_definition from your config.yaml file, otherwise the cached definitions and files will not be used.
 
 
