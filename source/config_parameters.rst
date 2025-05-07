@@ -2,6 +2,7 @@ First analysis
 ============
 Before the first analysis sample table and config file need to be set up (see above). Unless otherwise specified, stemcnv-check defaults to look for a "sample_table.tsv" (or .xlsx) and "config.yaml" file.
 
+It is recommended to start by **creating a separate folder** for your project. This folder should include raw data folder, config.yaml and sample table files.
 
 Config file settings
 ============
